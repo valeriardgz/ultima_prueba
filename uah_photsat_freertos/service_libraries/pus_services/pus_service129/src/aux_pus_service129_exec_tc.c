@@ -107,9 +107,9 @@ void pus_service129_exec_TC_129_2(tc_handler_t *ptc_handler) {
 
 	//TODO Get Kp, Ki and Kd
 	// Extracción secuencial de los tres floats del app data
-		error = tc_handler_get_float_appdata_field(ptc_handler, &Kp);
-		if (!error) error = tc_handler_get_float_appdata_field(ptc_handler, &Ki);
-		if (!error) error = tc_handler_get_float_appdata_field(ptc_handler, &Kd);
+		//error = tc_handler_get_float_appdata_field(ptc_handler, &Kp);
+		//if (!error) error = tc_handler_get_float_appdata_field(ptc_handler, &Ki);
+		//if (!error) error = tc_handler_get_float_appdata_field(ptc_handler, &Kd);
 
 
 	if (error) {
