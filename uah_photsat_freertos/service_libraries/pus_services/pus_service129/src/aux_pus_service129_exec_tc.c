@@ -58,6 +58,11 @@ void pus_service129_exec_TC_129_1(tc_handler_t *ptc_handler) {
 	uint8_t num_of_images;
 
 	//TODO Get Theta Pitch, Theta Yaw and num of images
+	// Extraer datos del app data
+		error = tc_handler_get_int16_appdata_field(ptc_handler, &ThetaPitch);
+		if (!error) error = tc_handler_get_int16_appdata_field(ptc_handler, &ThetaYaw);
+		if (!error) error = tc_handler_get_uint8_appdata_field(ptc_handler, &num_of_images);
+
 
 	if (error) {
 
@@ -101,6 +106,10 @@ void pus_service129_exec_TC_129_2(tc_handler_t *ptc_handler) {
 	float Kd;
 
 	//TODO Get Kp, Ki and Kd
+	// Extracción secuencial de los tres floats del app data
+		error = tc_handler_get_float_appdata_field(ptc_handler, &Kp);
+		if (!error) error = tc_handler_get_float_appdata_field(ptc_handler, &Ki);
+		if (!error) error = tc_handler_get_float_appdata_field(ptc_handler, &Kd);
 
 
 	if (error) {
