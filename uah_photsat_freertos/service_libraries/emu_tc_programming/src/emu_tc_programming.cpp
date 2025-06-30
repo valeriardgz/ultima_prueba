@@ -48,7 +48,7 @@ EmuGSS_TCProgram129_2 prog_FT_UAH_PHOTSAT_SERV_129_0010_step0( OBT_AFTER_POWER_O
 // STEP1 - Ejecuta observación con TC[129,1]
 EmuGSS_TCProgram129_1 prog_FT_UAH_PHOTSAT_SERV_129_0010_step1( OBT_AFTER_POWER_ON + 5,
     "FT_UAH_PHOTSAT_SERV_129_0010 STEP1: Ejecuta observación (ThetaPitch=30, ThetaYaw=45,número de imágenes = 3)",
-    30,45, 3 );
+    30*60,45*60, 3 );
 
 #endif
 
@@ -65,7 +65,7 @@ EmuGSS_TCProgram12_5_Value_UINT8 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step0(OB
 
 EmuGSS_TCProgram12_5_Value_UINT8 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step1(OBT_AFTER_POWER_ON + 5,
     "FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP1: Configura PMONID 2 para monitorizar ThetaYaw_W_ControlPID (14) ",
-    2, 14,1,1,0x00FF,0x00,0x4003);
+    2, 14,1,1,0xFF,0x00,0x4003);
 
 //habilitamos monitorización
 EmuGSS_TCProgram12_1 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step2( OBT_AFTER_POWER_ON + 10,
@@ -86,7 +86,7 @@ EmuGSS_TCProgram129_2 prog_FT_UAH_PHOTSAT_SERV_129_0020_step5( OBT_AFTER_POWER_O
 // Comanda observación con ángulos alejados de (0,0)
 EmuGSS_TCProgram129_1 prog_FT_UAH_PHOTSAT_SERV_129_0020_step6( OBT_AFTER_POWER_ON + 30,
     "STEP6: Observación forzada (ThetaPitch=40, ThetaYaw=35, num_of_samples=3)",
-    40, 35, 3);
+    40*60, 35*60, 3);
 
 // Define acción recuperadora: ejecuta TC[129,3] si ocurre el evento 0x4003
 EmuGSS_TCProgram19_1_Action_129_3 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step7(OBT_AFTER_POWER_ON + 35,
