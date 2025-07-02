@@ -33,7 +33,7 @@ int main (void){
 #endif
  
  
-	UAHPhotSat	comp1(1, 10, EDROOMprioNormal, 1024, systemDeployment.GetComp1Memory());
+	UAHPhotSat	comp1(1, 13, EDROOMprioNormal, 1024, systemDeployment.GetComp1Memory());
 	CCBKGTCExec	comp2(2, 10, EDROOMprioLow, 1024, systemDeployment.GetComp2Memory());
 	CCHK_FDIRMng	comp3(3, 13, EDROOMprioNormal, 4096, systemDeployment.GetComp3Memory());
 	CCTCManager	comp4(4, 10, EDROOMprioNormal, 4096, systemDeployment.GetComp4Memory());

@@ -36,7 +36,7 @@ void MainWait(UAHPhotSat   &comp1,
 void CEDROOMSystemMemory::SetMemory(){
  
 	comp1Memory.SetMemory(10, comp1Messages, &comp1MessagesMarks[0]
-					,10,comp1QueueNodes, &comp1QueueNodesMarks[0]);
+					,13,comp1QueueNodes, &comp1QueueNodesMarks[0]);
 	comp2Memory.SetMemory(10, comp2Messages, &comp2MessagesMarks[0]
 					,10,comp2QueueNodes, &comp2QueueNodesMarks[0]);
 	comp3Memory.SetMemory(10, comp3Messages, &comp3MessagesMarks[0]
@@ -164,6 +164,7 @@ TEDROOMSignal CEDROOMSystemCommSAP::C3HK_FDIRMng_PHK_FDIRCtrl__C4TCManager_PHK_F
 void CEDROOMSystemCommSAP::RegisterInterfaces(){
  
 	// Register Interface for Component 1
+	m_localCommSAP.RegisterInterface(1, mp_comp1->Timer, mp_comp1);
  
 	// Register Interface for Component 2
 	m_localCommSAP.RegisterInterface(1, mp_comp2->BKGExecCtrl, mp_comp2);

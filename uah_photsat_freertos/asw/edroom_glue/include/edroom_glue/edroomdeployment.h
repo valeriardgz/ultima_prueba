@@ -26,8 +26,8 @@ class CEDROOMSystemMemory{
 	//!Messages Memory of component comp1
 	CEDROOMMessage	comp1Messages[10];
 	bool	comp1MessagesMarks[10];
-	CEDROOMQueue::CQueueNode	comp1QueueNodes[10];
-	bool	comp1QueueNodesMarks[10];
+	CEDROOMQueue::CQueueNode	comp1QueueNodes[13];
+	bool	comp1QueueNodesMarks[13];
  
 	//!Messages Memory of component comp2
 	CEDROOMMessage	comp2Messages[10];

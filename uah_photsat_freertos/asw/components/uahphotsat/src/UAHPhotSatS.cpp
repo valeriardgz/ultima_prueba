@@ -19,6 +19,14 @@ UAHPhotSat::UAHPhotSat(TEDROOMComponentID id,
 		CEDROOMComponent(id,EDROOMprioMINIMUM+1,roomNumMaxMens,
 				roomtaskPrio,roomStack, pActorMemory ),
 
+		// *********** Timing service access point *********
+
+		EDROOMtimingSAP(this, 3,&pActorMemory->TimingMemory),
+
+		// *******************  Timers  ********************
+
+		Timer(&EDROOMtimingSAP, 2 ),
+
 		// ***************	Top State  *****************
 
 		edroomTopState(*this)
@@ -52,6 +60,10 @@ int UAHPhotSat::EDROOMConfig()
 int UAHPhotSat::EDROOMStart()
 {
 
+
+	//****************** Timing Task Start*****************
+
+	EDROOMtimingSAP.Start();
 
 	//***************** CEDROOMComponent::EDROOMStart*********
 
@@ -109,6 +121,8 @@ void UAHPhotSat::CEDROOMMemory::SetMemory(TEDROOMUInt32 numMessages_ ,
 
 		CEDROOMComponentMemory::SetMemory( numMessages_,MessagesMem_, MessagesMemMarks_,
 			numberOfNodes_,QueueNodesMem_, QueueNodesMemMarks_, QueueHeads);
+
+		TimingMemory.SetMemory(3,TimerInf,&TimerInfMarks[0],TimeOutMsgs,&TimeOutMsgsMarks[0]);
 
 
 }
