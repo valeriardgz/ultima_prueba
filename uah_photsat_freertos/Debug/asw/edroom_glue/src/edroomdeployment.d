@@ -66,7 +66,8 @@ asw/edroom_glue/src/edroomdeployment.o: \
  /home/atcsol/git/ultima_prueba/uah_photsat_freertos/service_libraries/pus_services/pus_service128/include/public/pus_service128.h \
  /home/atcsol/git/ultima_prueba/uah_photsat_freertos/service_libraries/pus_services/pus_service129/include/public/pus_service129.h \
  /home/atcsol/git/ultima_prueba/uah_photsat_freertos/asw/components/cctcmanager/include/public/cctcmanager_iface_v1.h \
- /home/atcsol/git/ultima_prueba/uah_photsat_freertos/llsw/sc_channel_drv/include/public/sc_channel_drv_v1.h
+ /home/atcsol/git/ultima_prueba/uah_photsat_freertos/llsw/sc_channel_drv/include/public/sc_channel_drv_v1.h \
+ /home/atcsol/git/ultima_prueba/uah_photsat_freertos/asw/components/ccobsmng/include/public/ccobsmng_iface_v1.h
 /home/atcsol/git/ultima_prueba/uah_photsat_freertos/asw/edroom_glue/include/edroom_glue/edroomdeployment.h:
 /home/atcsol/git/ultima_prueba/uah_photsat_freertos/asw/edroom_glue/include/edroom_glue/edroomdf.h:
 /home/atcsol/git/ultima_prueba/uah_photsat_freertos/service_libraries/edroomsl/edroomsl/include/public/edroomsl_iface_v1.h:
@@ -134,3 +135,4 @@ asw/edroom_glue/src/edroomdeployment.o: \
 /home/atcsol/git/ultima_prueba/uah_photsat_freertos/service_libraries/pus_services/pus_service129/include/public/pus_service129.h:
 /home/atcsol/git/ultima_prueba/uah_photsat_freertos/asw/components/cctcmanager/include/public/cctcmanager_iface_v1.h:
 /home/atcsol/git/ultima_prueba/uah_photsat_freertos/llsw/sc_channel_drv/include/public/sc_channel_drv_v1.h:
+/home/atcsol/git/ultima_prueba/uah_photsat_freertos/asw/components/ccobsmng/include/public/ccobsmng_iface_v1.h:

@@ -57,41 +57,43 @@ EmuGSS_TCProgram129_1 prog_FT_UAH_PHOTSAT_SERV_129_0010_step1( OBT_AFTER_POWER_O
 
 #ifdef FT_UAH_PHOTSAT_SERV_129_0020
 
+
+// Define acción recuperadora: ejecuta TC[129,3] si ocurre el evento 0x4003
+EmuGSS_TCProgram19_1_Action_129_3 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step0(OBT_AFTER_POWER_ON + 0,
+    "FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP0: Acción recuperadora: TC[129,3] ante evento 0x4003",
+    0x4003);
+
 //defino la monitorización de parámetros (asociación evento 0x4003)
 //PMONID,PID, intervalo (HK cada 1s),repeticion, mascara, valor esperado, evento para un valor inesperado
-EmuGSS_TCProgram12_5_Value_UINT8 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step0(OBT_AFTER_POWER_ON + 0,
-    "FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP0: Configura PMONID 1 para monitorizar ThetaPitch_W_ControlPID (13) ",
-    1, 13,1,1,0xFF,0x00,0x4003);
 
 EmuGSS_TCProgram12_5_Value_UINT8 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step1(OBT_AFTER_POWER_ON + 5,
-    "FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP1: Configura PMONID 2 para monitorizar ThetaYaw_W_ControlPID (14) ",
-    2, 14,1,1,0xFF,0x00,0x4003);
+    "FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP1: Configura PMONID 1 para monitorizar ThetaPitch_W_ControlPID (13) ",
+    1, 13,1,1,0xFFFF,0x00,0x4003);
+
+EmuGSS_TCProgram12_5_Value_UINT8 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step2(OBT_AFTER_POWER_ON + 10,
+    "FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP2: Configura PMONID 2 para monitorizar ThetaYaw_W_ControlPID (14) ",
+    2, 14,1,1,0x0000FFFF,0x00,0x4003);
 
 //habilitamos monitorización
-EmuGSS_TCProgram12_1 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step2( OBT_AFTER_POWER_ON + 10,
-	"FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP2: Habilita PMONID 1", 1);
+EmuGSS_TCProgram12_1 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step3( OBT_AFTER_POWER_ON + 15,
+	"FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP3: Habilita PMONID 1", 1);
 
-EmuGSS_TCProgram12_1 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step3(OBT_AFTER_POWER_ON + 15,
-	"FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP3: Habilita PMONID 2", 2);
+EmuGSS_TCProgram12_1 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step4(OBT_AFTER_POWER_ON + 20,
+	"FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP4: Habilita PMONID 2", 2);
 
 // habilitamos el evento 0x4003
-EmuGSS_TCProgram19_4 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step4(OBT_AFTER_POWER_ON + 20,
-	"FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP4: Habilita evento 0x4003", 0x4003);
+EmuGSS_TCProgram19_4 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step5(OBT_AFTER_POWER_ON + 25,
+	"FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP5: Habilita evento 0x4003", 0x4003);
 
 //Configura PID para exceso de velocidad con TC[129,2]
-EmuGSS_TCProgram129_2 prog_FT_UAH_PHOTSAT_SERV_129_0020_step5( OBT_AFTER_POWER_ON + 25,
-    "FT_UAH_PHOTSAT_SERV_129_0020 STEP5: Configura PID (Kp=0.5, Ki=0.5, Kd=0.5)",
+EmuGSS_TCProgram129_2 prog_FT_UAH_PHOTSAT_SERV_129_0020_step6( OBT_AFTER_POWER_ON + 30,
+    "FT_UAH_PHOTSAT_SERV_129_0020 STEP6: Configura PID (Kp=0.5, Ki=0.5, Kd=0.5)",
     0.5, 0.5, 0.5);
 
 // Comanda observación con ángulos alejados de (0,0)
-EmuGSS_TCProgram129_1 prog_FT_UAH_PHOTSAT_SERV_129_0020_step6( OBT_AFTER_POWER_ON + 30,
-    "STEP6: Observación forzada (ThetaPitch=40, ThetaYaw=35, num_of_samples=3)",
+EmuGSS_TCProgram129_1 prog_FT_UAH_PHOTSAT_SERV_129_0020_step7( OBT_AFTER_POWER_ON + 35,
+    " FT_UAH_PHOTSAT_SERV_129_0020 STEP7: Observación forzada (ThetaPitch=40, ThetaYaw=35, num_of_samples=3)",
     40*60, 35*60, 3);
-
-// Define acción recuperadora: ejecuta TC[129,3] si ocurre el evento 0x4003
-EmuGSS_TCProgram19_1_Action_129_3 prog_FT_UAH_PHOTSAT_SERV_129_FDIR_0020_step7(OBT_AFTER_POWER_ON + 35,
-    "FT_UAH_PHOTSAT_SERV_129_FDIR_0020 STEP7: Acción recuperadora: TC[129,3] ante evento 0x4003",
-    0x4003);
 
 #endif
 

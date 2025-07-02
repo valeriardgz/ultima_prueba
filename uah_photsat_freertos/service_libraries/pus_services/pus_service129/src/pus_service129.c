@@ -60,7 +60,7 @@ void pus_service129_exec_tc(tc_handler_t *ptc_handler) {
 
 	case 3:
 		// TC[129,3] - Reset Attitude
-		pus_service129_exec_TC_129_1(ptc_handler);
+		pus_service129_exec_TC_129_3(ptc_handler);
 		break;
 
 	default:
