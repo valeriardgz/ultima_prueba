@@ -134,8 +134,10 @@ void	CCObsMng::EDROOM_CTX_Top_0::FProgAttitudeCtrl()
 	 
 	//time.GetTime(); // Get current monotonic time
 	//time.Add(X,Y); // Add X sec + Y microsec
- time.GetTime();
-time+= Pr_Time(0,100000);
+
+
+ 
+VNextTimeout+= Pr_Time(0,100000);
 time = VNextTimeout;
    //Program absolute timer 
    AttCtrlTimer.InformAt( time ); 
