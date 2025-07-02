@@ -42,21 +42,7 @@ public:
 			//!Array of Message Queue Heads, one for each priority
 			CEDROOMQueue::CQueueHead QueueHeads[EDROOMprioMINIMUM+1];
 
-			//************ Component Timing Service Memory************
-
-			//!Component Timing Service Timer Info Memory
-			CEDROOMTimerInfo TimerInf[3];
-			//!Component Timing Service Timer Info Marks Memory
-			bool TimerInfMarks[3];
-			//!Component Timing Service TimeOut Messages Memory
-			CEDROOMTimeOutMessage TimeOutMsgs[3];
-			//!Component Timing Service TimeOut Messages Marks Memory
-			bool TimeOutMsgsMarks[3];
-
-		public: 
-
-			//!Component Timing Service Memory Object
-			CEDROOMTimingMemory TimingMemory;
+		public:
 
 
 
@@ -83,18 +69,6 @@ public:
 	//******************  Component Communication Ports *******************
 	// ********************************************************************
 
-
-
-	// ********************************************************************
-	// ********************  Timing Service Interface *********************
-	// ********************************************************************
-
-	//! Timing Service Access Point. It is common to all timing ports.
-	CEDROOMTimingSAP	 EDROOMtimingSAP;
-
-
-	//! Timer Timing Port
-	CEDROOMTimingInterface	Timer;
 
 
 
@@ -177,7 +151,6 @@ public:
 		CEDROOMMessage * &MsgBack;
 
 		//!Component ports
-		CEDROOMTimingInterface & Timer;
 
 
 		//! State Identifiers
