@@ -36,19 +36,19 @@
 
 #define OBT_START_FT_ST129 OBT_AFTER_POWER_ON
 #define FT_UAH_PHOTSAT_SERV_129_0010
-#define FT_UAH_PHOTSAT_SERV_129_0020
+//#define FT_UAH_PHOTSAT_SERV_129_0020
 
 #ifdef FT_UAH_PHOTSAT_SERV_129_0010
 
 // STEP0 - Configura PID con TC[129,2]
 EmuGSS_TCProgram129_2 prog_FT_UAH_PHOTSAT_SERV_129_0010_step0( OBT_AFTER_POWER_ON + 0,
-    "FT_UAH_PHOTSAT_SERV_129_0010 STEP0: Configura PID (Kp=1.0, Ki=0.0, Kd=0.0)",
-    1.0, 0.0, 0.0);
+    "FT_UAH_PHOTSAT_SERV_129_0010 STEP0: Configura PID (Kp=0.05, Ki=0.02, Kd=0.02)",
+    0.05, 0.02, 0.02);
 
 // STEP1 - Ejecuta observación con TC[129,1]
 EmuGSS_TCProgram129_1 prog_FT_UAH_PHOTSAT_SERV_129_0010_step1( OBT_AFTER_POWER_ON + 5,
     "FT_UAH_PHOTSAT_SERV_129_0010 STEP1: Ejecuta observación (ThetaPitch=30, ThetaYaw=45,número de imágenes = 3)",
-    30*60,45*60, 3 );
+    3*60,4*60, 3 );
 
 #endif
 
